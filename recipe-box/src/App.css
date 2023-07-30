@@ -38,10 +38,10 @@ body {
   font-size: 20px;
   color: white;
   background-color: #545254;
-  height: 87px;
+  height: 78px;
   overflow-y: scroll;
   border-radius: 10px;
-  padding: 10px 0;
+  padding: 7px 0;
 }
 
 .recipe-list > ol > li:hover {
@@ -61,7 +61,7 @@ body {
   margin-top: 20px;
   border-radius: 10px;
   padding: 10px;
-  height: 380px;
+  height: 370px;
   overflow-y: scroll;
 }
 
@@ -189,4 +189,22 @@ button:hover {
   color:black;
   font-weight: bold;
   font-size: larger;
+}
+
+.search-label {
+  color:#100528;
+  font-weight:bolder;
+}
+
+.search-input {
+  color:#100528;
+  width: 60%;
+  font-weight:lighter;
+  border-radius: 5px;
+}
+
+.search-box {
+  width: 50%;
+  margin: auto;
+  margin-bottom:15px;
 }

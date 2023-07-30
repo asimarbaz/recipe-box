@@ -43,18 +43,6 @@ const RecipeDetails = (props) => {
               
             }
           })
-        // const confirm = window.confirm(`Are you sure you want to delete "${selectedRecipe.recipe}" from the Recipe Box?`)
-        // if(confirm){
-        //     axios.delete(`http://localhost:3040/api/recipe/${id}`)
-        //          .then((res) => {
-        //             console.log('deleted', res);
-        //             alert('successfully deleted')
-        //             window.location.reload();
-        //          })
-        //          .catch((err) => {
-        //             alert(err.message)
-        //          })
-        // }
     }
 
     const styles = StyleSheet.create({

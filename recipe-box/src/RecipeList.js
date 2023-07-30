@@ -7,6 +7,7 @@ import Swal from 'sweetalert2'
 const RecipeList = (props) => {
     const [ recipeList, setRecipeList ] = useState([])
     const [ selectedRecipe, setSelectedRecipe ] = useState(recipeList[0])
+    const [ search, setSearch ] = useState('')
     useEffect(() => {
         axios.get('http://localhost:3040/api/recipe')
              .then((response) => {
@@ -23,15 +24,26 @@ const RecipeList = (props) => {
              })
     }, [recipeList])
 
+    // useEffect(() => {
+    //     console.log('search changed', search)
+    // }, [search])
+
     
     return (
         <div>
-            
+            <form className='search-box'>
+                <label htmlFor="search" className='search-label'>Search for Recipe: </label>
+                <input type='search' value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search" className='search-input' id='search'/>
+            </form>
             <div className="recipe-list">
                 {recipeList.length===0 && <p style={{color:"red",textAlign:"center"}}>Something unexpected happened</p>}
+                {
+                    recipeList?.filter(recipe => recipe.recipe.toLowerCase().includes(search.toLowerCase())).length === 0 &&
+                    <p style={{color:"red",textAlign:"center"}}>Recipe not found</p>
+                }
                 <ol>
                     {
-                        recipeList?.map((recipe) => {
+                        recipeList?.filter(recipe => recipe.recipe.toLowerCase().includes(search.toLowerCase())).map((recipe) => {
                             return <li key={recipe._id} onClick={() => setSelectedRecipe(recipe)}>{recipe.recipe}</li>
                         })
                     }
