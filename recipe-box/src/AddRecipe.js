@@ -109,7 +109,7 @@ const AddRecipe = (props) => {
 
     return (
         <div>
-            <Button type="primary" onClick={showModal} className='add'>
+            <Button type="primary" onClick={showModal} className='add' style={{margin:"10px 0px"}}>
                 <b>Add a Recipe</b>
             </Button>
             <Modal
